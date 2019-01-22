@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kyudong.netflixandroid.signup.SignUpLastActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_sign_up_last"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_back_btn_last"
+                android:layout_width="12dp"
+                android:layout_height="18dp"
+                android:background="@drawable/win"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:layout_width="216dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="39dp"
+                android:text="@string/sign_up_toolbar"
+                android:textColor="@color/black_87"
+                android:textSize="19.5sp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/img_back_btn_last"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/sign_up_vpPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_last_start_sign_up"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_sign_up_last"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </android.support.v4.view.ViewPager>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_hello"
+        android:textSize="19.5sp"
+        android:textColor="@color/rouge"
+        app:layout_constraintBottom_toTopOf="@id/text_sign_up_nickname"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_sign_up_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="19.5sp"
+        android:textColor="@color/rouge"
+        app:layout_constraintBottom_toTopOf="@id/sign_up_tb"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sign_up_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        app:tabBackground="@drawable/custom_tab_selector"
+        app:layout_constraintBottom_toTopOf="@+id/btn_last_start_sign_up"/>
+
+    <Button
+        android:id="@+id/btn_last_start_sign_up"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="@string/sign_up_start_btn"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:background="@drawable/custom_login_btn_round"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_vpPager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
