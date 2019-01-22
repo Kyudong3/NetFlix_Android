@@ -17,8 +17,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-
         //첫 번째 방법
         /*btn_normal_login.setOnClickListener(this)
         btn_social_login1.setOnClickListener(this)
