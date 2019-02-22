@@ -1,62 +1,61 @@
 package com.kyudong.netflixandroid.home
 
-import android.content.Context
-import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.annotation.Nullable
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.util.Base64
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import com.kyudong.netflixandroid.NetflixApp
 import com.kyudong.netflixandroid.R
-import com.kyudong.netflixandroid.R.id.menu_alarm
 import com.kyudong.netflixandroid.home.fragment.HomeAlarmFragment
 import com.kyudong.netflixandroid.home.fragment.HomeFragment
 import com.kyudong.netflixandroid.home.fragment.HomeMypageFragment
-import com.kyudong.netflixandroid.model.Account
-import com.kyudong.netflixandroid.network.ApiService
-import com.kyudong.netflixandroid.network.RetrofitClientInstance
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.toolbar_home.*
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
-import com.facebook.login.LoginManager
-
+import java.lang.IllegalStateException
 
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var token: String
 
+    companion object {
+        val HOME = "home"
+        val ALARM = "alarm"
+        val MYPAGE = "mypage"
+    }
+
+    var homeFragment: HomeFragment? = null
+    var alarmFragment: HomeAlarmFragment? = null
+    var mypageFragment: HomeMypageFragment? = null
+
+    var current : String = HOME
+
     private val mOnNavigationItemSelectedListener = object : BottomNavigationView.OnNavigationItemSelectedListener {
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
             when (item.itemId) {
                 R.id.menu_alarm -> {
-                    Toast.makeText(applicationContext, "menu_alarm Clicked", Toast.LENGTH_LONG).show()
-                    val frag = HomeAlarmFragment()
-                    addFragment(frag)
+                    if(alarmFragment == null) {
+                        alarmFragment = HomeAlarmFragment.newInstance()
+                    }
+                    addFragment(alarmFragment, ALARM)
                     return true
                 }
 
                 R.id.menu_home -> {
-                    Toast.makeText(applicationContext, "menu_home Clicked", Toast.LENGTH_LONG).show()
-                    val frag = HomeFragment()
-                    addFragment(frag)
+                    if(homeFragment == null) {
+                        homeFragment = HomeFragment.newInstance()
+                    }
+                    addFragment(homeFragment, HOME)
                     return true
                 }
 
                 R.id.menu_mypage -> {
-                    Toast.makeText(applicationContext, "menu_mypage Clicked", Toast.LENGTH_LONG).show()
-                    val frag = HomeMypageFragment()
-                    addFragment(frag)
+                    if(mypageFragment == null) {
+                        mypageFragment = HomeMypageFragment.newInstance()
+                    }
+                    addFragment(mypageFragment, MYPAGE)
                     return true
                 }
             }
@@ -65,11 +64,37 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    private fun addFragment(fragment: Fragment) {
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.layout_frame_home, fragment)
-                .commit()
+    private fun addFragment(fragment: Fragment?, tag: String) {
+
+
+        val found = supportFragmentManager.findFragmentByTag(tag)
+
+        val temp = when(current) {
+            HOME -> homeFragment
+            ALARM -> alarmFragment
+            MYPAGE -> mypageFragment
+            else -> throw IllegalStateException()
+        }
+
+        if(found == null) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.layout_frame_home, fragment!!, tag)
+                    .hide(temp!!)
+                    .commit()
+        } else {
+            if(!found.isVisible) {
+                supportFragmentManager
+                        .beginTransaction()
+                        .show(found)
+                        .hide(temp!!)
+                        .commit()
+            }
+        }
+
+        current = tag
+
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,9 +107,12 @@ class HomeActivity : AppCompatActivity() {
         //NetflixApp.prefs.userToken = ""
 
         if (savedInstanceState == null) {
+
+            homeFragment = HomeFragment.newInstance()
+
             supportFragmentManager
                     .beginTransaction()
-                    .add(R.id.layout_frame_home, HomeFragment.newInstance(), "home")
+                    .add(R.id.layout_frame_home, homeFragment!!, HOME)
                     .commit()
         }
 

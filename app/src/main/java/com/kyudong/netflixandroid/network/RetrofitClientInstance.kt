@@ -16,24 +16,24 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object RetrofitClientInstance {
 
-    private val client = OkHttpClient.Builder()
-
     private var retrofit: Retrofit? = null
     private var BASE_URL = "https://netflixshare.shop:8080/"
     //private var BASE_URL = "https://api.3rd.supply/"
 
-    fun retrofitInstance(): Retrofit? {
-        client.addInterceptor(LoggingInterceptor.Builder()
-                .loggable(BuildConfig.DEBUG)
-                .setLevel(Level.BASIC)
-                .log(Platform.INFO)
-                .request("Request")
-                .response("Response")
-                .build())
+    fun retrofitInstance(): Retrofit {
+        if (retrofit == null) {
 
-        val okHttpClient = client.build()
+            val client = OkHttpClient.Builder()
 
-        if (retrofit ==null) {
+            client.addInterceptor(LoggingInterceptor.Builder()
+                    .loggable(BuildConfig.DEBUG)
+                    .setLevel(Level.BASIC)
+                    .log(Platform.INFO)
+                    .request("Request")
+                    .response("Response")
+                    .build())
+
+            val okHttpClient = client.build()
             retrofit = retrofit2.Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
@@ -41,6 +41,6 @@ object RetrofitClientInstance {
                     .build()
         }
 
-        return retrofit
+        return retrofit!!
     }
 }

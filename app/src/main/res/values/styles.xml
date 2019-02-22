@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/white</item>
     </style>
     
     <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
@@ -13,7 +13,6 @@
         <item name="colorControlNormal">@color/white_two_60</item>
         <item name="colorControlActivated">@color/white_two</item>
         <item name="colorControlHighlight">@color/colorAccent</item>
-        <item name="textColorError">@color/scarlet</item>
     </style>
 
     <style name="AppTheme3" parent="Theme.AppCompat.Light.NoActionBar">
@@ -21,7 +20,6 @@
         <item name="colorControlNormal">@color/white_two_60</item>
         <item name="colorControlActivated">@color/white_two</item>
         <item name="colorControlHighlight">@color/colorAccent</item>
-        <item name="textColorError">@color/scarlet</item>
     </style>
 
     <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">

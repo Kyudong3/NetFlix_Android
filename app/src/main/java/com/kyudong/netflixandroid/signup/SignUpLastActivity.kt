@@ -1,9 +1,9 @@
 package com.kyudong.netflixandroid.signup
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.ViewPager
 import android.util.Log
 import android.widget.Toast
 import com.kyudong.netflixandroid.NetflixApp
@@ -55,7 +55,7 @@ class SignUpLastActivity : AppCompatActivity() {
         sign_up_vpPager.adapter = adapter
         sign_up_tb.setupWithViewPager(sign_up_vpPager)
 
-        sign_up_vpPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        sign_up_vpPager.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {}
 
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}

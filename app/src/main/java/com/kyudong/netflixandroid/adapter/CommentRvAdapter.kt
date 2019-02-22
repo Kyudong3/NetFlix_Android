@@ -2,7 +2,7 @@ package com.kyudong.netflixandroid.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,7 @@ import java.util.*
 /**
  * Created by Kyudong on 11/02/2019.
  */
-class CommentRvAdapter(private val context: Context?, private val commentList: List<Comment>) : RecyclerView.Adapter<CommentRvAdapter.ViewHolder>() {
+class CommentRvAdapter(private val context: Context?, private val commentList: List<Comment>) : androidx.recyclerview.widget.RecyclerView.Adapter<CommentRvAdapter.ViewHolder>() {
 
     private var month: Long = 0
     private var day: Long = 0
@@ -81,12 +81,12 @@ class CommentRvAdapter(private val context: Context?, private val commentList: L
         }
     }
 
-    class ViewHolder(view: View?) : RecyclerView.ViewHolder(view) {
-        var profile = view?.imv_comment_profile
-        var nickname = view?.txv_comment_nickname
-        var content = view?.txv_comment_content
-        var time = view?.txv_comment_time
-        var replyCnt = view?.txv_comment_reply_cnt
+    class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
+        var profile = view.imv_comment_profile
+        var nickname = view.txv_comment_nickname
+        var content = view.txv_comment_content
+        var time = view.txv_comment_time
+        var replyCnt = view.txv_comment_reply_cnt
     }
 }
 

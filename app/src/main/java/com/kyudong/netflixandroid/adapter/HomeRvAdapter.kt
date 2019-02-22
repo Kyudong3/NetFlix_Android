@@ -1,8 +1,8 @@
 package com.kyudong.netflixandroid.adapter
 
 import android.content.Context
-import android.support.constraint.ConstraintLayout
-import android.support.v7.widget.RecyclerView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,11 +15,11 @@ import java.util.*
 /**
  * Created by Kyudong on 2019. 1. 23..
  */
-class HomeRvAdapter(private val context: Context?, private val postList: List<Post>, spinnerList: ArrayList<String>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HomeRvAdapter(var postList: List<Post>) :
+        RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     private val TYPE_HEADER: Int = 0
     private val TYPE_ITEM: Int = 1
-    private var adapter = ArrayAdapter(context, R.layout.simple_spinner_item, spinnerList)
     var itemClick: ItemClick? = null
     private var month: Long = 0
     private var day: Long = 0
@@ -42,21 +42,19 @@ class HomeRvAdapter(private val context: Context?, private val postList: List<Po
         return postList.size + 1
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
         if (viewType == TYPE_HEADER) {
-            val header = LayoutInflater.from(context).inflate(R.layout.rv_home_header, parent, false)
+            val header = LayoutInflater.from(parent.context).inflate(R.layout.rv_home_header, parent, false)
             return HeaderHolder(header)
         } else {
-            val item = LayoutInflater.from(context).inflate(R.layout.rv_home_item, parent, false)
+            val item = LayoutInflater.from(parent.context).inflate(R.layout.rv_home_item, parent, false)
             return ItemHolder(item)
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         if (holder is HeaderHolder) {
             val h: HeaderHolder = holder
-            adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-            h.optSpinner?.adapter = adapter
             //h.optSpinner?.adapter = ArrayAdapter(context, R.layout.support_simple_spinner_dropdown_item, spinnerList)
         } else if (holder is ItemHolder) {
             val i: ItemHolder = holder
@@ -108,21 +106,21 @@ class HomeRvAdapter(private val context: Context?, private val postList: List<Po
         }
     }
 
-    class HeaderHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        var optSpinner = itemView?.findViewById<Spinner>(R.id.spinner_home)
+    class HeaderHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+        var optSpinner = itemView.findViewById<Spinner>(R.id.spinner_home)
     }
 
-    class ItemHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        var clAbove = itemView?.findViewById<ConstraintLayout>(R.id.cl_rv_item_above)
-        var clBelow = itemView?.findViewById<ConstraintLayout>(R.id.cl_rv_item_below)
-        var periodTxv = itemView?.findViewById<TextView>(R.id.txv_item_period)
-        var systemTxv = itemView?.findViewById<TextView>(R.id.txv_item_pay_system)
-        var nameTxv = itemView?.findViewById<TextView>(R.id.txv_item_name)
-        var nicknameTxv = itemView?.findViewById<TextView>(R.id.txv_item_nickname)
-        var numberTxv = itemView?.findViewById<TextView>(R.id.txv_item_number)
-        var hitTxv = itemView?.findViewById<TextView>(R.id.txv_item_hit_cnt)
-        var commentTxv = itemView?.findViewById<TextView>(R.id.txv_item_comment_cnt)
-        var timeTxv = itemView?.findViewById<TextView>(R.id.txv_item_time)
-        var profileImv = itemView?.findViewById<ImageView>(R.id.img_item_profile)
+    class ItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+        var clAbove = itemView.findViewById<ConstraintLayout>(R.id.cl_rv_item_above)
+        var clBelow = itemView.findViewById<ConstraintLayout>(R.id.cl_rv_item_below)
+        var periodTxv = itemView.findViewById<TextView>(R.id.txv_item_period)
+        var systemTxv = itemView.findViewById<TextView>(R.id.txv_item_pay_system)
+        var nameTxv = itemView.findViewById<TextView>(R.id.txv_item_name)
+        var nicknameTxv = itemView.findViewById<TextView>(R.id.txv_item_nickname)
+        var numberTxv = itemView.findViewById<TextView>(R.id.txv_item_number)
+        var hitTxv = itemView.findViewById<TextView>(R.id.txv_item_hit_cnt)
+        var commentTxv = itemView.findViewById<TextView>(R.id.txv_item_comment_cnt)
+        var timeTxv = itemView.findViewById<TextView>(R.id.txv_item_time)
+        var profileImv = itemView.findViewById<ImageView>(R.id.img_item_profile)
     }
 }

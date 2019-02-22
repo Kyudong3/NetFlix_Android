@@ -2,7 +2,7 @@ package com.kyudong.netflixandroid
 
 import android.app.Activity
 import android.content.Context
-import android.support.constraint.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View

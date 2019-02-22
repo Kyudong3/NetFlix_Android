@@ -1,11 +1,11 @@
 package com.kyudong.netflixandroid.adapter
 
 import android.content.Context
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.PagerAdapter
-import android.support.v4.view.ViewPager
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import android.util.Log
 import android.view.View
 import com.kyudong.netflixandroid.signup.fragment.VpagerFragmentOne
@@ -15,9 +15,9 @@ import com.kyudong.netflixandroid.signup.fragment.VpagerFragmentThird
 /**
  * Created by Kyudong on 2019. 1. 21..
  */
-class ViewPagerAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(fm: androidx.fragment.app.FragmentManager?) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
-    override fun getItem(position: Int): Fragment {
+    override fun getItem(position: Int): androidx.fragment.app.Fragment {
         val fragment = when(position) {
             0 -> VpagerFragmentOne.newInstance()
             1 -> VpagerFragmentSecond.newInstance()

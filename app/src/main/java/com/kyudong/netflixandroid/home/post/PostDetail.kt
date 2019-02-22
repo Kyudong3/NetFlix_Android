@@ -1,9 +1,9 @@
 package com.kyudong.netflixandroid.home.post
 
 import android.app.Activity
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
@@ -53,7 +53,7 @@ class PostDetail : AppCompatActivity() {
         return true
     }
 
-    private val llm = LinearLayoutManager(this)
+    private val llm = androidx.recyclerview.widget.LinearLayoutManager(this)
     private lateinit var adapter: CommentRvAdapter
     private val service = RetrofitClientInstance.retrofitInstance()?.create(ApiService::class.java)
     private var id: Int = -1

@@ -2,7 +2,7 @@ package com.kyudong.netflixandroid.signup
 
 import android.content.Intent
 import android.graphics.Rect
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kyudong.netflixandroid.R
 import kotlinx.android.synthetic.main.activity_sign_up_first.*
@@ -13,14 +13,14 @@ import android.widget.Toast
 import com.kyudong.netflixandroid.KeyboardVisibilityUtils
 import android.app.Activity
 import android.content.Context
-import android.support.constraint.ConstraintLayout
-import android.support.v4.content.ContextCompat
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import android.util.Log
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import android.view.View.OnTouchListener
-import android.support.v4.view.ViewCompat.setY
-import android.support.v4.view.ViewCompat.setX
+import androidx.core.view.ViewCompat.setY
+import androidx.core.view.ViewCompat.setX
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -208,7 +208,7 @@ class SignUpFirstActivity : AppCompatActivity() {
 
     override fun onResume() {
         Log.e("Lifecycle", "onResume")
-        edit_sign_up_pwd.text.clear()
+        edit_sign_up_pwd.text?.clear()
         edit_sign_up_email.text.clear()
         imv_sign_up_checkbox.isChecked = false
         super.onResume()
