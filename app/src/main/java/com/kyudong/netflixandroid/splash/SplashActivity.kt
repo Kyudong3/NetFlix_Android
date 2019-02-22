@@ -4,22 +4,35 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.support.v4.content.ContextCompat
+import android.util.Log
+import android.widget.Toast
+import com.kyudong.netflixandroid.NetflixApp
 import com.kyudong.netflixandroid.login.LoginActivity
 import com.kyudong.netflixandroid.R
+import com.kyudong.netflixandroid.home.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
-
-    //private lateinit var handler: Handler
 
     private var mDelayHandler: Handler? = null
     private val SPLASH_DELAY: Long = 3000 // 3 second
 
-    // Splash 1번째 방법 //
-    internal val mRunnable2: Runnable = Runnable {
+    internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-            val intent = Intent(application, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (NetflixApp.prefs.userToken == "") {
+                Toast.makeText(applicationContext, "로그인 화면으로 이동", Toast.LENGTH_SHORT).show()
+                Log.e("pref", "login")
+                val intent = Intent(application, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(applicationContext, "홈 화면으로 이동", Toast.LENGTH_SHORT).show()
+                Log.e("pref", "home")
+                val intent = Intent(applicationContext, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
         }
     }
 
@@ -27,23 +40,16 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        window.statusBarColor = ContextCompat.getColor(this, R.color.black)
+
         mDelayHandler = Handler()
 
-        mDelayHandler!!.postDelayed(mRunnable2, SPLASH_DELAY)
-
-        // Splash 2번째 방법
-        /*
-        Handler().postDelayed({
-            val intent2 = Intent(applicationContext, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 3000)
-        */
+        mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
     }
 
     public override fun onDestroy() {
         if (mDelayHandler != null) {
-            mDelayHandler!!.removeCallbacks(mRunnable2)
+            mDelayHandler!!.removeCallbacks(mRunnable)
 
             super.onDestroy()
         }

@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.kyudong.netflixandroid.home.write.PostWrite">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_write_post"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/custom_cl_detail"
+        app:contentInsetStart="0dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imv_toolbar_post_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/mask"
+                android:backgroundTint="@color/black_54"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/write_post_toolbar"
+                android:textColor="@color/black_38"
+                android:textSize="19sp"
+                android:fontFamily="@font/notosanscjkkr_bold"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imv_toolbar_post_checked"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_done_normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_write_post"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_write_1"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:id="@+id/txv_write_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/write_post_title"
+                    android:textColor="@color/black_87"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edit_write_title"
+                    android:layout_width="247dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/write_post_title_hint"
+                    android:textColor="@color/black_38"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_title" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/dark_navy_blue_12"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_write_title" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_write_2"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_write_1">
+
+                <TextView
+                    android:id="@+id/txv_write_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/write_post_person"
+                    android:textColor="@color/black_87"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_write_person"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_person">
+
+                    <ImageView
+                        android:id="@+id/imv_write_person_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/imv_person_selector"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imv_write_person_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/imv_person_selector"
+                        app:layout_constraintLeft_toRightOf="@+id/imv_write_person_1" />
+
+                    <ImageView
+                        android:id="@+id/imv_write_person_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/imv_person_selector"
+                        app:layout_constraintLeft_toRightOf="@+id/imv_write_person_2" />
+
+                    <TextView
+                        android:id="@+id/txv_remain_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/write_person_left_0"
+                        android:textColor="@color/black_38"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/notosanscjkkr_regular"
+                        android:includeFontPadding="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/imv_write_person_3" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/dark_navy_blue_12"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_write_person" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_write_3"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_write_2">
+
+                <TextView
+                    android:id="@+id/txv_write_pay_system"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/write_post_pay_system"
+                    android:textColor="@color/black_87"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_write_pay_system_basic"
+                    android:layout_width="96dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/pay_system_selector"
+                    android:text="@string/system_basic"
+                    android:textColor="@color/pay_system_btn_color"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanscjkkr_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.09"
+                    app:layout_constraintRight_toLeftOf="@+id/btn_write_pay_system_std"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_pay_system" />
+
+                <Button
+                    android:id="@+id/btn_write_pay_system_std"
+                    android:layout_width="96dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/pay_system_selector"
+                    android:text="@string/system_std"
+                    android:textColor="@color/pay_system_btn_color"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanscjkkr_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.09"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_pay_system" />
+
+                <Button
+                    android:id="@+id/btn_write_pay_system_pre"
+                    android:layout_width="96dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/pay_system_selector"
+                    android:text="@string/system_premium"
+                    android:textColor="@color/pay_system_btn_color"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanscjkkr_medium"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.09"
+                    app:layout_constraintLeft_toRightOf="@+id/btn_write_pay_system_std"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_pay_system" />
+
+                <TextView
+                    android:id="@+id/txv_write_pay_system_info"
+                    android:layout_width="255dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/write_post_pay_system_premium"
+                    android:textColor="@color/black_38"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.09"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_write_pay_system_std" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/dark_navy_blue_12"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_pay_system_info" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_write_4"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_write_3">
+
+                <TextView
+                    android:id="@+id/txv_write_post_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/write_post_month"
+                    android:textColor="@color/black_87"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_write_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_post_month">
+
+                    <EditText
+                        android:id="@+id/edit_write_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/month_hint"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textColor="@color/black_38"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/notosanscjkkr_regular"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.05"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/month"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/notosanscjkkr_regular"
+                        android:includeFontPadding="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/dark_navy_blue_12"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_write_month" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_write_5"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_write_4">
+
+                <TextView
+                    android:id="@+id/txv_write_post_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/write_post_fee"
+                    android:textColor="@color/black_87"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txv_write_post_fee_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_post_fee" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_write_fee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_post_fee_info">
+
+                    <EditText
+                        android:id="@+id/edit_write_fee"
+                        android:layout_width="247dp"
+                        android:layout_height="28dp"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/won_hint"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:textColor="@color/black_38"
+                        android:textSize="15sp"
+                        android:textCursorDrawable="@null"
+                        android:fontFamily="@font/notosanscjkkr_regular"
+                        android:includeFontPadding="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/won"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/notosanscjkkr_regular"
+                        android:includeFontPadding="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/dark_navy_blue_12"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_write_fee" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_write_6"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_write_5">
+
+                <TextView
+                    android:id="@+id/txv_write_post_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/write_post_content"
+                    android:textColor="@color/black_87"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edit_write_post_content"
+                    android:layout_width="328dp"
+                    android:layout_height="92dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/write_post_content_hint"
+                    android:textColor="@color/black_38"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_post_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/dark_navy_blue_12"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_write_post_content" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_write_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_write_6">
+
+                <TextView
+                    android:id="@+id/txv_write_post_picture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/write_post_picture"
+                    android:textColor="@color/black_87"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_write_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_post_picture"
+                    android:layout_marginTop="26dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/imv_write_photo"
+                        android:layout_width="156dp"
+                        android:layout_height="117dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imv_write_remove_photo"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:src="@drawable/remove_picture"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/btn_write_attach"
+                    android:layout_width="156dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@drawable/custom_picture_attach_btn"
+                    android:text="@string/picture_attach"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanscjkkr_medium"
+                    android:includeFontPadding="false"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_write_photo" />
+
+                <TextView
+                    android:id="@+id/txv_write_attach"
+                    android:layout_width="208dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/attach_info_1"
+                    android:textColor="@color/black_38"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.03"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_write_attach"
+                    android:visibility="visible"
+                    />
+
+                <Button
+                    android:id="@+id/btn_write_write"
+                    android:layout_width="328dp"
+                    android:layout_height="36dp"
+                    android:background="@color/rouge"
+                    android:text="@string/write_post_write"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanscjkkr_medium"
+                    android:letterSpacing="0.09"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_write_attach" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

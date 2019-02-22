@@ -3,4 +3,34 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_38">#61ffffff</color>
+    <color name="white_54">#8affffff</color>
+    <color name="white_60">#99ffffff</color>
+    <color name="white_two">#fafafa</color>
+    <color name="white_two_12">#1efafafa</color>
+    <color name="white_two_60">#99fafafa</color>
+    <color name="white_three">#f5f5f5</color>
+    <color name="very_light_pink">#dedede</color>
+    <color name="very_light_pink_three_30">#4cd9d9d9</color>
+    <color name="black">#212121</color>
+    <color name="black_12">#1e000000</color>
+    <color name="black_32">#51000000</color>
+    <color name="black_38">#61000000</color>
+    <color name="black_54">#8a000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_87">#de000000</color>
+    <color name="black_two_32">#51191919</color>
+    <color name="lipstick">#c01c42</color>
+    <color name="very_light_pink_three">#d9d9d9</color>
+    <color name="rouge">#ad1440</color>
+    <color name="brown_grey">#9b9b9b</color>
+    <color name="greyish_brown">#4a4a4a</color>
+    <color name="pale_mauve">#eeedee</color>
+    <color name="blue_violet_0">#006202ee</color>
+    <color name="brown_grey_two">#979797</color>
+    <color name="scarlet">#b00020</color>
+    <color name="dark_navy_blue_12">#1e000001</color>
+    <color name="brownish_grey">#616161</color>
 </resources>

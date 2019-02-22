@@ -1,93 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
     tools:context="com.kyudong.netflixandroid.signup.SignUpSecondActivity">
 
-    <android.support.v7.widget.Toolbar
+    <include
         android:id="@+id/toolbar_sign_up_second"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:background="@color/white"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        layout="@layout/toolbar_sign_up"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dark_navy_blue_12"
+        android:layout_below="@+id/toolbar_sign_up_second"/>
+
+    <ScrollView
+        android:id="@+id/sv_sign_up_second"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/toolbar_sign_up_second">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/img_back_btn_second"
-                android:layout_width="12dp"
-                android:layout_height="18dp"
-                android:background="@drawable/win"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_sign_up_second"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="5:3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
 
-            <TextView
-                android:layout_width="216dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="39dp"
-                android:text="@string/sign_up_toolbar"
-                android:textColor="@color/black_87"
-                android:textSize="19.5sp"
-                android:gravity="center_vertical"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@+id/img_back_btn_second"/>
+                <ImageView
+                    android:id="@+id/img_sign_up_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/nickname_ill"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="5:4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_sign_up_second">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_sign_up_nickname"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/custom_sign_up_id"
+                    android:hint="@string/sign_up_nickname"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="@color/black_60"
+                    android:textSize="15.6sp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:textCursorDrawable="@null"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imv_sign_up_nickname_error"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_error_normal"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txv_sign_up_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:text="@string/sign_up_nickname_info"
+                    android:textColor="@color/black_60"
+                    android:textSize="11sp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_sign_up_nickname" />
+
+
+            </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>
 
-    </android.support.v7.widget.Toolbar>
-
-    <ImageView
-        android:id="@+id/img_sign_up_profile"
-        android:layout_width="99dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/win"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_sign_up_second"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <android.support.design.widget.TextInputEditText
-        android:id="@+id/edit_sign_up_nickname"
-        android:layout_width="328dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="41dp"
-        android:background="@drawable/custom_sign_up_nickname"
-        android:hint="@string/sign_up_nickname"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textSize="15.6sp"
-        android:textColor="@color/black_60"
-        app:layout_constraintTop_toBottomOf="@+id/img_sign_up_profile"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-    <TextView
-        android:layout_width="312dp"
-        android:layout_height="16dp"
-        android:text="@string/sign_up_nickname_info"
-        android:textSize="11.7sp"
-        android:textColor="@color/black_60"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintTop_toBottomOf="@+id/edit_sign_up_nickname"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+    </ScrollView>
 
     <Button
         android:id="@+id/btn_second_next_sign_up"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:background="@color/brownish_grey"
         android:text="@string/sign_up_next_btn"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        android:background="@drawable/custom_login_btn_round"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-</android.support.constraint.ConstraintLayout>
+        android:textSize="19sp"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.02"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

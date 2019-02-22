@@ -1,3 +1,109 @@
 <resources>
+    <!-- 어플리케이션 -->
     <string name="app_name">NetFlixAndroid</string>
+
+    <!-- 페이스북 -->
+    <string name="facebook_app_id">2300029386707766</string>
+    <string name="fb_login_protocol_scheme">fb2300029386707766</string>
+
+    <!-- 스플래쉬 화면 -->
+    <string name="splash_text">NShare</string>
+
+    <!-- 로그인 화면 -->
+    <string name="login_normal_btn">로그인</string>
+    <string name="login_id_hint_edit">Email</string>
+    <string name="login_pwd_hint_edit">Password</string>
+    <string name="login_find_id_pwd"><u>아이디/비밀번호 찾기</u></string>
+    <string name="login_sign_up_text"><u>회원가입</u></string>
+    <string name="login_social">소셜로그인</string>
+    <string name="login_social_text">페이스북을 통해 로그인</string>
+
+    <!-- 회원가입 화면1 -->
+    <string name="sign_up_toolbar">회원가입</string>
+    <string name="sign_up_email">email</string>
+    <string name="sign_up_pwd">password</string>
+    <string name="sign_up_id_error">이미 존재하는 이메일입니다.</string>
+    <string name="sign_up_id_form_error">이메일 형식이 아닙니다.</string>
+    <string name="sign_up_pwd_rule">영문+숫자 6자리이상</string>
+    <string name="sign_up_tos"><u>이용약관</u></string>
+    <string name="sign_up_agree">에 동의합니다</string>
+    <string name="sign_up_next_btn">다음</string>
+
+    <!-- 회원가입 화면2 -->
+    <string name="sign_up_nickname">닉네임</string>
+    <string name="sign_up_nickname_info">사용할 닉네임을 입력하세요</string>
+    <string name="sign_up_nickname_error">이미 존재하는 닉네임입니다</string>
+    <string name="sign_up_nickname_length_error">7글자 이하로 작성해주세요</string>
+
+    <!-- 회원가입 화면3 -->
+    <string name="sign_up_start_btn">시작하기</string>
+    <string name="sign_up_skip">SKIP</string>
+
+    <!-- 홈 Toolbar -->
+    <string name="home_toolbar">NShare</string>
+
+    <!-- 홈 bottom Nav 메뉴 -->
+    <string name="menu_alarm">알람</string>
+    <string name="menu_home">홈</string>
+    <string name="menu_myPage">마이페이지</string>
+
+    <!-- 홈 프래그먼트 -->
+    <string name="txv_opt">최신순</string>
+    <string name="std">스탠다드</string>
+    <string name="premium">프리미엄</string>
+    <string name="basic">베이직</string>
+    <string name="month_one"> 1개월</string>
+    <string name="month_two"> 2개월</string>
+    <string name="month_three"> 3개월</string>
+
+
+    <!-- 글 상세 -->
+    <string name="register_comment">등록</string>
+    <string name="comment_hint">댓글을 남겨주세요</string>
+
+    <!-- 글 상세 메뉴 -->
+    <string name="menu_report">신고하기</string>
+    <string name="menu_mijung">저장하기</string>
+    <string name="won_sig">원 씩</string>
+
+    <!-- 신고 다이얼로그 -->
+    <string name="menu_1">거짓정보</string>
+    <string name="menu_2">광고</string>
+    <string name="menu_3">어쩌고저쩌고</string>
+    <string name="menu_4">Subtitle1</string>
+    <string name="menu_5">Subtitle2</string>
+    <string name="stop_dialog">취소하기</string>
+    <string name="report_success">신고가 접수되었습니다</string>
+
+    <!-- 글 작성 -->
+    <string name="write_post_toolbar">글 작성</string>
+    <string name="write_post_title">글의 제목 뭔가요?</string>
+    <string name="write_post_title_hint">제목을 입력해주세요</string>
+    <string name="write_post_person">몇분이 필요한가요?(본인 제외)</string>
+    <string name="write_post_pay_system">어떤 요금제를 사용하시나요?</string>
+    <string name="system_basic">베이직</string>
+    <string name="system_std">스탠다드</string>
+    <string name="system_premium">프리미엄</string>
+    <string name="write_post_pay_system_std">2명이 동시 시청,HD화질,2개의 기기에 영상 다운 가능 매월 12,000</string>
+    <string name="write_post_pay_system_premium">4명이 동시 시청, UHD화질, 4개의 기기에 영상 다운 가능 매월 14,500원</string>
+    <string name="write_post_pay_system_basic">1명이 시청,1개의 기기에 영상 다운 가능,매월 9500원</string>
+    <string name="write_post_month">몇개월의 요금을 나눌건가요?</string>
+    <string name="month_hint">00</string>
+    <string name="month">개월</string>
+    <string name="won">원</string>
+    <string name="won_hint">0000</string>
+    <string name="write_post_fee">1인당 지불할 요금은?</string>
+    <string name="write_post_content">글의 내용을 입력해주세요</string>
+    <string name="write_post_content_hint">연락 방법과 규칙을 포함해 주세요!</string>
+    <string name="write_post_picture">첨부할 사진이 있나요?(선택)</string>
+    <string name="picture_attach">첨부하기</string>
+    <string name="attach_info_1">이미 결제하셨다면 인증샷을 추가해 보세요! 사진은 1장까지 가능해요!</string>
+    <string name="attach_info_2">사진은 1장까지 가능해요!</string>
+    <string name="write_post_write">작성하기</string>
+    <string name="write_post_adjust">수정하기</string>
+    <string name="write_person_left_0">0/3명</string>
+    <string name="write_person_left_1">1/3명</string>
+    <string name="write_person_left_2">2/3명</string>
+    <string name="write_person_left_3">3/3명</string>
+
 </resources>

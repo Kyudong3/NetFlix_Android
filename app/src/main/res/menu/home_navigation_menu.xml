@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_alarm"
+        android:enabled="true"
+        android:title="@string/menu_alarm"
+        android:icon="@drawable/selector_nav_alert" />
+
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:title="@string/menu_home"
+        android:icon="@drawable/selector_nav_home"/>
+
+    <item
+        android:id="@+id/menu_mypage"
+        android:enabled="true"
+        android:title="@string/menu_myPage"
+        android:icon="@drawable/selector_nav_my"/>
+</menu>

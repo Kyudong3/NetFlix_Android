@@ -27,7 +27,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$rootProject.kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlin_version"
     implementation "org.jetbrains.anko:anko:$rootProject.anko_version"
     implementation "com.android.support:recyclerview-v7:$rootProject.recyclerview_version"
     implementation "com.android.support:appcompat-v7:$rootProject.appcompat_version"
@@ -42,4 +42,8 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$rootProject.runner_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espresso_version"
     implementation "com.android.support:design:$rootProject.design_version"
+    implementation('com.github.ihsanbal:LoggingInterceptor:3.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    implementation 'com.facebook.android:facebook-android-sdk:4.40.0'
 }

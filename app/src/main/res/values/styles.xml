@@ -7,5 +7,36 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="colorControlNormal">@color/white_two_60</item>
+        <item name="colorControlActivated">@color/white_two</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="textColorError">@color/scarlet</item>
+    </style>
+
+    <style name="AppTheme3" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/white_three</item>
+        <item name="colorControlNormal">@color/white_two_60</item>
+        <item name="colorControlActivated">@color/white_two</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="textColorError">@color/scarlet</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+    </style>
+    
+    <style name="MyAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white_60</item>
+        <item name="android:textColorHint">@color/white_60</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/white_60</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+    </style>
 
 </resources>

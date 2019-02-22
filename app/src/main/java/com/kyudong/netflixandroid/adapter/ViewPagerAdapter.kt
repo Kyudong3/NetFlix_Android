@@ -19,6 +19,7 @@ class ViewPagerAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         val fragment = when(position) {
+            0 -> VpagerFragmentOne.newInstance()
             1 -> VpagerFragmentSecond.newInstance()
             2 -> VpagerFragmentThird.newInstance()
             else -> VpagerFragmentOne.newInstance()
